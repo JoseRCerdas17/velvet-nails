@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink: #FF69B4;
+  --color-pink-light: #FFB6D9;
+  --color-pink-dark: #CC4490;
+  --color-purple: #C084FC;
+  --color-purple-light: #D8B4FE;
+  --color-purple-dark: #9333EA;
+  --color-dark: #0A0A0A;
+  --color-dark-card: #1A1A1A;
+  --color-dark-surface: #2D2D2D;
+  --color-dark-border: #1A1A1A;
+  --font-sans: "Raleway", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0A0A0A;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .btn-pink {
+    @apply bg-pink text-white font-bold px-6 py-3 rounded-full cursor-pointer transition-all duration-300;
+  }
+  .btn-pink:hover {
+    background-color: #CC4490;
+  }
+  .btn-outline-purple {
+    @apply border border-purple text-purple font-bold px-6 py-3 rounded-full cursor-pointer transition-all duration-300;
+  }
+  .btn-outline-purple:hover {
+    @apply bg-purple text-white;
+  }
+  .btn-outline-pink {
+    @apply border border-pink text-pink font-bold px-6 py-3 rounded-full cursor-pointer transition-all duration-300;
+  }
+  .btn-outline-pink:hover {
+    @apply bg-pink text-white;
+  }
+  .section-padding {
+    @apply px-4 py-16 md:px-8 lg:px-16 lg:py-24;
+  }
+}

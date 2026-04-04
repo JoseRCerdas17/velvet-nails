@@ -3,10 +3,8 @@ const fotos = [
     { id: 2, url: "https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=600&q=80", categoria: "Semipermanente", alt: "Semipermanente" },
     { id: 3, url: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80", categoria: "Nail Art", alt: "Nail art creativo" },
     { id: 4, url: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=80", categoria: "Builder Gel", alt: "Builder gel" },
-    { id: 3, url: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80", categoria: "Nail Art", alt: "Nail art creativo" },
-    
-     { id: 6, url: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80&sat=-100&w=400&h=400", categoria: "Híbridas", alt: "Unas hibridas" },
-];
+    { id: 5, url: "https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=600&q=80&v=2", categoria: "Pedicure Spa", alt: "Pedicure spa" },
+{ id: 6, url: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80&v=2", categoria: "Híbridas", alt: "Unas hibridas" },];
   
   export default function Galeria() {
     return (

@@ -5,6 +5,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import Link from "next/link";
 
 const servicios = [
   { id: 1, nombre: "Acrygel con Tips", precio: "₡XX,000", duracion: "90 min" },
@@ -46,11 +47,28 @@ export default function Reservar() {
       return;
     }
     setCargando(true);
+    const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setExito(true);
+      const response = await fetch(`${API}/reservas/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre,
+          telefono,
+          email,
+          servicio: servicio?.nombre || "",
+          precio: servicio?.precio || "",
+          fecha: fechaSeleccionada ? fechaSeleccionada.toLocaleDateString("es-CR") : "",
+          hora: horarioSeleccionado || "",
+        }),
+      });
+      if (response.ok) {
+        setExito(true);
+      } else {
+        alert("Error al crear la reserva, intenta de nuevo");
+      }
     } catch {
-      alert("Error al crear la reserva");
+      alert("Error de conexión con el servidor");
     } finally {
       setCargando(false);
     }
@@ -74,9 +92,9 @@ export default function Reservar() {
               <p className="text-white text-sm"><span className="text-pink">Hora:</span> {horarioSeleccionado}</p>
               <p className="text-white text-sm"><span className="text-pink">Total:</span> {servicio?.precio}</p>
             </div>
-            <a href="/" className="btn-pink w-full uppercase tracking-widest text-sm py-3 block text-center">
+            <Link href="/" className="btn-pink w-full uppercase tracking-widest text-sm py-3 block text-center">
               Volver al inicio
-            </a>
+            </Link>
           </div>
         </div>
         <Footer />

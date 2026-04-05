@@ -28,7 +28,7 @@ export default function Servicios() {
   const thumbLeft = progress * (100 - thumbWidth);
 
   return (
-    <section className="bg-dark section-padding">
+    <section id="servicios" className="bg-dark section-padding">
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-16">

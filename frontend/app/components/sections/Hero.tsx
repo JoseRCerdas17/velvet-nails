@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
 
         {/* Izquierda — imagen */}
         <div className="relative min-h-72 md:h-full overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Nail art de lujo" className="w-full h-full object-cover" />
+          <Image src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Nail art de lujo" fill className="object-cover" />
           <div className="absolute inset-0" style={{background: "linear-gradient(to top, #0A0A0A 15%, transparent 60%)"}} />
           <div className="absolute bottom-8 left-8 right-8 z-10">
             <div className="w-full h-px mb-4" style={{background: "linear-gradient(90deg, #FF69B4, #C084FC)"}} />

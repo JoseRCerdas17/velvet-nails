@@ -6,7 +6,7 @@ const horarios = [
 
 export default function Contacto() {
   return (
-    <section className="bg-dark-card section-padding">
+    <section id="contacto" className="bg-dark-card section-padding">
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-16">

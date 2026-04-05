@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from database.connection import get_db
 from models.reserva import Reserva
 from pydantic import BaseModel
+from emails import enviar_confirmacion_cliente
 
 router = APIRouter(prefix="/reservas", tags=["reservas"])
 
@@ -35,6 +36,14 @@ def crear_reserva(reserva: ReservaCreate, db: Session = Depends(get_db)):
     db.add(nueva_reserva)
     db.commit()
     db.refresh(nueva_reserva)
+    enviar_confirmacion_cliente(
+        nombre=reserva.nombre,
+        email=reserva.email,
+        servicio=reserva.servicio,
+        precio=reserva.precio,
+        fecha=reserva.fecha,
+        hora=reserva.hora
+    )
     return nueva_reserva
 
 @router.get("/")

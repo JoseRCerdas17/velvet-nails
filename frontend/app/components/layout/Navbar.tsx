@@ -21,10 +21,10 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/servicios" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Servicios</Link>
-            <Link href="/galeria" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Galería</Link>
-            <Link href="/equipo" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Equipo</Link>
-            <Link href="/contacto" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Contacto</Link>
+            <Link href="/#servicios" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Servicios</Link>
+            <Link href="/#galeria" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Galería</Link>
+            <Link href="/#equipo" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Equipo</Link>
+            <Link href="/#contacto" className="text-white hover:text-pink transition-colors duration-300 text-sm uppercase tracking-wider">Contacto</Link>
             <Link href="/reservar" className="btn-pink text-sm uppercase tracking-wider px-6 py-2">Reservar Cita</Link>
           </div>
 
@@ -39,10 +39,10 @@ export default function Navbar() {
 
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96" : "max-h-0"}`}>
         <div className="flex flex-col px-4 pb-6 gap-4 bg-dark-card border-t border-dark-border">
-          <Link href="/servicios" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Servicios</Link>
-          <Link href="/galeria" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Galería</Link>
-          <Link href="/equipo" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Equipo</Link>
-          <Link href="/contacto" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Contacto</Link>
+          <Link href="/#servicios" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Servicios</Link>
+          <Link href="/#galeria" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Galería</Link>
+          <Link href="/#equipo" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Equipo</Link>
+          <Link href="/#contacto" onClick={() => setIsOpen(false)} className="text-white hover:text-pink transition-colors py-2 uppercase tracking-wider text-sm">Contacto</Link>
           <Link href="/reservar" onClick={() => setIsOpen(false)} className="btn-pink text-center uppercase tracking-wider text-sm">Reservar Cita</Link>
         </div>
       </div>

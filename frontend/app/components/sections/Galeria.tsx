@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const fotos = [
     { id: 1, url: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80", categoria: "Acrygel", alt: "Acrygel con tips" },
     { id: 2, url: "https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=600&q=80", categoria: "Semipermanente", alt: "Semipermanente" },
@@ -8,7 +10,7 @@ const fotos = [
   
   export default function Galeria() {
     return (
-      <section className="bg-dark-card section-padding">
+      <section id="galeria" className="bg-dark-card section-padding">
         <div className="max-w-6xl mx-auto">
   
           <div className="text-center mb-16">
@@ -24,7 +26,7 @@ const fotos = [
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {fotos.map((foto) => (
               <div key={foto.id} className="relative overflow-hidden rounded-lg group aspect-square">
-                <img src={foto.url} alt={foto.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <Image src={foto.url} alt={foto.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center" style={{background: "rgba(10,10,10,0.7)"}}>
                   <span className="text-pink font-bold text-xs tracking-[3px] uppercase border border-pink px-4 py-2 rounded-full mb-2">
                     {foto.categoria}
